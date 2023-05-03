@@ -131,4 +131,3 @@ def get_income(access_token):
 
     # return json object
     return json.dumps(income_response['accounts'][:2], indent=4, sort_keys=True)
-
