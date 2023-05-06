@@ -8,7 +8,7 @@ To install development dependencies, execute `make develop`. This will install a
 
 ## Contribution Instructions:
 #### Fork and Clone:
-You will need your own fork to work on the code. Go to the `spending-habits-tracker` project
+You will need your own fork to work on the code. Go to the `spending-habits-tracker project
 page <https://github.com/uyozulku/spending-habits-tracker>` and hit the ``Fork`` button. You will want to clone your fork on your local machine:
 
     git clone https://github.com/uyozulku/spending-habits-tracker.git sht-dev[YourName]
