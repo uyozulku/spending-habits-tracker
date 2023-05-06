@@ -7,16 +7,13 @@ requires = [
 build-backend="setuptools.build_meta"
 
 [project]
-name = "spending-habits-tracker
-"
+name = "spending-habits-tracker"
 authors = [{name = "Unal Yigit Ozulku", email = "uyozulku@gmail.com"}]
 description="Spending-Habits-Tracker is a Python library to provide real-time data of a user's spending habits."
 readme = "README.md"
 version = "0.1.0"
 requires-python = ">=3.7"
-dependencies = ["beautifulsoup4==4.11.2"]
-
-dependencies = []
+dependencies = ["numpy", "pandas", "matplotlib",]
 
 classifiers = [
     "Development Status :: 2 - Pre-Alpha",
@@ -99,4 +96,4 @@ python_version = '3.10'
 
 [tool.pytest.ini_options]
 asyncio_mode = 'strict'
-testpaths = 'example_project_python/tests'
+testpaths = 'source/tests'
