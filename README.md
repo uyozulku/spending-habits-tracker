@@ -5,6 +5,8 @@ Project for Open Source Development (COMS 4995)
 ![Issues](https://img.shields.io/github/issues/uyozulku/spending-habits-tracker)
 [![codecov](https://codecov.io/gh/uyozulku/spending-habits-tracker/branch/main/graph/badge.svg?token=0TCR1MSIWH)](https://codecov.io/gh/uyozulku/spending-habits-tracker)
 [![Build Status](https://github.com/uyozulku/spending-habits-tracker/workflows/Build%20Status/badge.svg?branch=main)](https://github.com/uyozulku/spending-habits-tracker/actions?query=workflow%3A%22Build+Status%22)
+[![PyPI](https://img.shields.io/pypi/v/spending-habits-tracker)](https://pypi.org/project/spending-habits-tracker/)
+
 
 ## Overview
 Spending-Habits-Tracker is a Python library to track and visualize spending habits. The library makes use of documents provided by the user (e.g. bank statements) to generate visualizations of spending habits over time. The library also provides a command line interface to interact with the library.
