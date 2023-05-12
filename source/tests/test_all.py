@@ -1,5 +1,5 @@
 import unittest
-import methods
+from .. import methods
 import pandas as pd
 from pandas.testing import assert_frame_equal
 
