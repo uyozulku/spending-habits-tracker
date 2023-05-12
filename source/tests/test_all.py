@@ -33,8 +33,8 @@ class TestMethods(unittest.TestCase):
         expected_df = expected_df.rename_axis('Category')
 
         actual_df = methods.get_category_averages(self.data).set_index('Category')
-        print(expected_df)
-        print(actual_df)
+        # print(expected_df)
+        # print(actual_df)
         assert_frame_equal(expected_df, actual_df)
 
     def test_get_category_counts(self):
@@ -45,6 +45,29 @@ class TestMethods(unittest.TestCase):
         self.assertEqual(methods.get_category_stats(self.data).loc['Food', 'Amount_x'], 20.0)
         self.assertEqual(methods.get_category_stats(self.data).loc['Food', 'Amount_y'], 5)
 
+    def test_get_category_stats_by_month(self):
+        a = methods.get_category_stats_by_month(self.data)
+
+        self.assertEqual(a.loc[2018,1,"Clothing"][0], 50.0)
+        self.assertEqual(a.loc[2018, 1, "Clothing"][1], 50.0)
+        self.assertEqual(a.loc[2018, 1, "Clothing"][2], 1.0)
+
+        self.assertEqual(a.loc[2018, 2, "Food"][0], 50.0)
+        self.assertEqual(a.loc[2018, 2, "Food"][1], 16.666666666666668)
+        self.assertEqual(a.loc[2018, 2, "Food"][2], 3.0)
+
+    def test_get_category_stats_by_year(self):
+        a = methods.get_category_stats_by_year(self.data)
+
+        self.assertEqual(a.loc[0,"Amount"], 80.0)
+        self.assertEqual(a.loc[0, "Amount_x"], 40.0)
+        self.assertEqual(a.loc[0, "Amount_y"], 2.0)
+
+        self.assertEqual(a.loc[4, "Amount"], 30.0)
+        self.assertEqual(a.loc[4, "Amount_x"], 15.0)
+        self.assertEqual(a.loc[4, "Amount_y"], 2.0)
+
+
     def get_category_stats_by_month(data):
         gb = data.groupby(['Category', data['Date'].dt.month])
         return gb.agg({'Amount': 'sum', 'Amount': 'mean', 'Amount': 'count'}).rename(columns={'Amount': 'Total Amount'})
@@ -52,3 +75,4 @@ class TestMethods(unittest.TestCase):
     def get_category_stats_by_year(data):
         gb = data.groupby(['Category', data['Date'].dt.year])
         return gb.agg({'Amount': 'sum', 'Amount': 'mean', 'Amount': 'count'}).rename(columns={'Amount': 'Total Amount'})
+
